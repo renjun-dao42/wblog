@@ -1,0 +1,15 @@
+fileChangeLogs:
+  - db/migrate/20250409062749_create_users.rb
+  - app/models/user.rb
+  - log/test.log
+  - app/controllers/admin/users_controller.rb
+  - config/routes.rb
+  - app/views/admin/users/_form.html.slim
+  - app/views/admin/posts/index.html.slim
+  - app/views/admin/users/index.html.slim
+  - app/views/admin/posts/new.html.slim
+  - app/views/admin/users/new.html.slim
+  - app/views/admin/users/edit.html.slim
+  - app/views/shared/admin/_sidebar.html.slim
+  - app/models/comment.rb
+  - db/migrate/20250409063208_add_user_id_to_comments.rb

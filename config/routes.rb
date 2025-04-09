@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
     resources :all_comments, only: [:index, :destroy]
     resources :labels
-
+    resources :users
 
     root to: 'dashboard#index'
   end

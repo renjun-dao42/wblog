@@ -1,0 +1,9 @@
+.row
+  .col-sm-6
+    = simple_form_for([:admin, @user], html: {novalidate: '' }) do |f|
+      = f.error_notification
+      = f.input :name, label: '用户名', required: true
+      = f.input :email, label: '电子邮箱', required: true
+      = f.input :password, label: '密码', required: true
+      = f.input :password_confirmation, label: '确认密码', required: true
+      = f.button :submit, class: 'btn btn-primary'

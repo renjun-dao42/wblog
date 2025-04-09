@@ -1,0 +1,29 @@
+.card
+  .card-header
+    .float-sm-left
+      h3.card-title 用户管理
+    .float-sm-right
+      = link_to '新建用户', new_admin_user_path, class: 'btn btn-primary btn-sm'
+  .card-body
+    table.table.table-hover
+      thead
+        tr
+          th ID
+          th 用户名
+          th 电子邮箱
+          th 操作
+      tbody
+        - @users.each do |user|
+          tr
+            td = user.id
+            td = user.name
+            td = user.email
+            td
+              = link_to '编辑', edit_admin_user_path(user), class: 'edit-user-link'
+              | &nbsp
+              = link_to '删除', admin_user_path(user), method: 'DELETE', 'data-confirm' => '确认删除该用户?'
+  .card-footer
+    .float-sm-left
+      | 总计: #{@users.total_count}
+    .float-sm-right
+      = paginate @users
