@@ -10,16 +10,30 @@
         = render 'common/no_blog_here'
       - else
         = render partial: 'post_head', locals: { post: @newest }
+        
+        - if @newest.respond_to?(:featured_image) && @newest.featured_image.present?
+          .featured-image.mb-3
+            = image_tag @newest.featured_image, class: 'img-fluid rounded', alt: @newest.title
+        
+        .content-meta.mb-2
+          span.text-muted
+            i.fa.fa-calendar.mr-1
+            = format_date(@newest.created_at)
+          span.text-muted.ml-3
+            i.fa.fa-clock-o.mr-1
+            = "#{((@newest.content.length / 500.0).ceil)} #{t('home.min_read')}"
+            
         .content.markdown
           == @newest.sub_content
           = link_to t('home.read'), blog_path(@newest), class: 'read-more'
-          p.published-at #{t('home.created_at')} #{format_date(@newest.created_at)}
 
         - if @recent.present?
-          h4.recent-title #{t('home.recent')}
+          h4.recent-title.mt-4 #{t('home.recent')}
           ul.recent-content
             - @recent.each do |re|
-              li = link_to re.title, blog_path(re)
+              li
+                = link_to re.title, blog_path(re)
+                span.text-muted.ml-2.small = format_date(re.created_at)
 
     .col-lg-4.self-introduce
       / Adjust it in common/welcome
