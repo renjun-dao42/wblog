@@ -1,17 +1,52 @@
 /* 样式调整请找 stylesheet: .self-introduce-index */
-.box
-  h4 欢迎
-  p 我是技术达人李亚飞
-.box
-  h4 关于我
+.box.mb-4
+  h4.sidebar-heading 欢迎
+  p.mt-2 我是技术达人李亚飞，欢迎来到我的个人博客空间。
+
+.box.mb-4
+  h4.sidebar-heading 关于我
   ul.aboutme-index
     li
+      i.fa.fa-briefcase.mr-2
       span 领域:
-      span 技术, 创业, 生活
+      span.ml-1 技术, 创业, 生活
     li
+      i.fa.fa-map-marker.mr-2
       span 位置:
-      span 中国 - 深圳 - 南山
+      span.ml-1 中国 - 深圳 - 南山
     li
+      i.fa.fa-info-circle.mr-2
       span 更多:
-      span
-        =  link_to '关于我', about_path
+      span.ml-1
+        = link_to '关于我', about_path
+
+.box.mb-4
+  h4.sidebar-heading 社交媒体
+  .social-links.d-flex.flex-wrap.mt-2
+    a.social-icon.mr-3.mb-2 href="https://github.com/windy" target="_blank" title="Github"
+      i.fab.fa-github
+    a.social-icon.mr-3.mb-2 href="#" title="微博"
+      i.fab.fa-weibo
+    - if ENV['RSS_URL'].present?
+      a.social-icon.mr-3.mb-2 href=ENV['RSS_URL'] target="_blank" title="RSS订阅" 
+        i.fa.fa-rss
+
+.box.mb-4
+  h4.sidebar-heading 标签云
+  .tag-cloud.mt-2
+    - if @featured_labels.present?
+      - @featured_labels.each do |label|
+        = link_to label.name, tag_path(label.name), class: "tag-item tag-size-#{rand(1..4)}"
+
+.box.mb-4
+  h4.sidebar-heading 站点统计
+  ul.site-stats.mt-2
+    li
+      i.fa.fa-file-text.mr-2
+      = "文章总数: #{Post.count || 0}"
+    li
+      i.fa.fa-comments.mr-2
+      = "评论总数: #{Comment.count || 0}"
+    li
+      i.fa.fa-tags.mr-2
+      = "标签总数: #{Label.count || 0}"

@@ -83,6 +83,7 @@ You can run it like a Ruby on Rails project as usual:
   cp config/database.yml.example config/database.yml
   ```
 
+
   Update `application.yml` & `database.yml` 's content as you need, then run setup:
 
   ```shell
