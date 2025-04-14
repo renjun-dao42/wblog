@@ -1,0 +1,53 @@
+- content_for(:title) do
+  | #{t('title.changelog')}
+.container
+  .row.justify-content-center
+    .col-sm-12.col-lg-9
+      .changelog-wrapper
+        h1.page-title Changelog
+        
+        .changelog-item
+          h2.version-title v2.0.0 - 2023-12-15
+          ul.change-list
+            li.feature 新增：全新的响应式设计，提升移动端浏览体验
+            li.feature 新增：夜间模式支持
+            li.bugfix 修复：评论提交后页面刷新问题
+            li.improvement 优化：加载速度提升30%
+        
+        .changelog-item
+          h2.version-title v1.9.0 - 2023-10-20
+          ul.change-list
+            li.feature 新增：文章支持Markdown表格功能
+            li.feature 新增：代码高亮支持更多编程语言
+            li.improvement 优化：网站搜索功能改进
+        
+        .changelog-item
+          h2.version-title v1.8.5 - 2023-08-05
+          ul.change-list
+            li.bugfix 修复：Safari浏览器下图片显示异常问题
+            li.bugfix 修复：文章归档页面日期排序问题
+            li.improvement 优化：评论区用户体验改进
+        
+        .changelog-item
+          h2.version-title v1.8.0 - 2023-06-12
+          ul.change-list
+            li.feature 新增：文章分享到社交媒体功能
+            li.feature 新增：阅读进度指示器
+            li.improvement 优化：图片懒加载实现，提升页面加载速度
+        
+        .changelog-item
+          h2.version-title v1.7.2 - 2023-04-08
+          ul.change-list
+            li.bugfix 修复：IE11兼容性问题
+            li.improvement 优化：标签云展示方式改进
+            li.security 安全：更新依赖库，修复安全漏洞
+        
+        .changelog-item
+          h2.version-title v1.7.0 - 2023-02-14
+          ul.change-list
+            li.feature 新增：用户评论支持@提及功能
+            li.feature 新增：文章目录自动生成
+            li.improvement 优化：后台编辑器体验提升
+      
+      .changelog-note
+        p 本页面记录网站重要更新和改进，持续更新中...

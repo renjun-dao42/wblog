@@ -1,0 +1,126 @@
+// Changelog styling
+.changelog-wrapper {
+  padding: 2rem 0;
+  
+  .page-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  .changelog-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .version-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #333;
+      
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: #2199e8;
+        border-radius: 50%;
+        margin-right: 0.75rem;
+        margin-bottom: 2px;
+      }
+    }
+    
+    .change-list {
+      padding-left: 2rem;
+      margin-top: 1rem;
+      
+      li {
+        margin-bottom: 0.75rem;
+        position: relative;
+        list-style-type: none;
+        line-height: 1.6;
+        color: #444;
+        padding-left: 1.5rem;
+        
+        &:before {
+          font-family: "FontAwesome";
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        
+        &.feature:before {
+          content: "\f067"; // Plus icon
+          color: #28a745;
+        }
+        
+        &.bugfix:before {
+          content: "\f188"; // Bug icon
+          color: #dc3545;
+        }
+        
+        &.improvement:before {
+          content: "\f0e7"; // Bolt icon
+          color: #fd7e14;
+        }
+        
+        &.security:before {
+          content: "\f023"; // Lock icon
+          color: #6f42c1;
+        }
+      }
+    }
+  }
+  
+  .changelog-note {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+// Responsive adaptations
+@media (max-width: 768px) {
+  .changelog-wrapper {
+    .page-title {
+      font-size: 1.8rem;
+    }
+    
+    .version-title {
+      font-size: 1.3rem;
+    }
+    
+    .change-list li {
+      padding-left: 1.3rem;
+    }
+  }
+}
+
+// Animation effects
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.changelog-wrapper {
+  .changelog-item {
+    animation: fadeIn 0.5s ease-out forwards;
+    
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
