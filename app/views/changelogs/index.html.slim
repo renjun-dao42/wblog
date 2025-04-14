@@ -1,0 +1,51 @@
+- content_for(:title) do
+  | #{t('title.changelog')}
+.container
+  .row.justify-content-center
+    .col-sm-12.col-lg-9
+      h1.changelog-title = t('title.changelog')
+      .changelog-content
+        .search-wrapper
+          = form_with url: changelogs_path, method: 'GET' do |f|
+            .form-group
+              = f.search_field :q, placeholder: t('changelog.search'), class: 'form-control'
+        ul.changelog-list
+          li.changelog-item
+            .version-number v1.2.0
+            .release-date 2023-12-15
+            ul.changes
+              li.feature 
+                i.fa.fa-star
+                | Added new responsive design for mobile devices
+              li.enhancement 
+                i.fa.fa-arrow-up
+                | Improved loading speed by 30%
+              li.bugfix 
+                i.fa.fa-bug
+                | Fixed comment submission issues
+          li.changelog-item
+            .version-number v1.1.0
+            .release-date 2023-10-20
+            ul.changes
+              li.feature 
+                i.fa.fa-star
+                | Added dark mode toggle
+              li.enhancement 
+                i.fa.fa-arrow-up
+                | Updated markdown editor with syntax highlighting
+              li.bugfix 
+                i.fa.fa-bug
+                | Fixed image upload problems
+          li.changelog-item
+            .version-number v1.0.0
+            .release-date 2023-08-01
+            ul.changes
+              li.feature 
+                i.fa.fa-star
+                | Initial release of the blog platform
+              li.feature 
+                i.fa.fa-star
+                | Implemented commenting system
+              li.feature 
+                i.fa.fa-star
+                | Added support for tags and categories

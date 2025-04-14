@@ -37,12 +37,14 @@ en:
     life: 'Life'
     creator: 'Startup'
     timeline: 'Timeline'
+    changelog: 'Changelog'
     about: 'About'
 
   title:
     home: 'Home'
     timeline: 'Timeline'
     about: 'About Me'
+    changelog: 'Changelog'
 
   comment_attributes:
     email: 'Format Validation Failed'
@@ -57,6 +59,16 @@ en:
 
   archive:
     search: 'Search'
+
+  changelog:
+    search: 'Search changelog'
+    title: 'Blog Update History'
+    version: 'Version'
+    release_date: 'Release Date'
+    feature: 'New Feature'
+    enhancement: 'Enhancement'
+    bugfix: 'Bug Fix'
+    no_results: 'No changelog entries found'
 
   admin:
     new_post: 'New Post'

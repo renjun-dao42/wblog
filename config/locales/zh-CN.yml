@@ -37,12 +37,14 @@ zh-CN:
     life: '生活'
     creator: '创业'
     timeline: '时间线'
+    changelog: '更新日志'
     about: '关于我'
 
   title:
     home: '首页'
     timeline: '时间线'
     about: '关于我'
+    changelog: '更新日志'
 
 
   activerecord:
@@ -71,6 +73,16 @@ zh-CN:
 
   archive:
     search: '搜索博客标题'
+
+  changelog:
+    search: '搜索更新历史'
+    title: '博客更新历史'
+    version: '版本'
+    release_date: '发布日期'
+    feature: '新功能'
+    enhancement: '功能优化'
+    bugfix: '问题修复'
+    no_results: '没有找到相关更新记录'
 
   admin:
     new_post: '新建博客'
